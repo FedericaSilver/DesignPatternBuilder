@@ -1,22 +1,22 @@
 public class Person {
-    private String fistName;
+    private String firstName;
     private String lastName;
     private int age;
     private String address;
 
-    public Person(String fistName, String lastName, int age, String address) {
-        this.fistName = fistName;
-        this.lastName = lastName;
-        this.age = age;
-        this.address = address;
+    public Person(PersonBuilder personBuilder) {
+        this.firstName = personBuilder.getFirstName();
+        this.lastName = personBuilder.getLastName();
+        this.age = personBuilder.getAge();
+        this.address = personBuilder.getAddress();
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -46,7 +46,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person: " +
-                "fistName: " + fistName + '\'' +
+                "firstName: " + firstName + '\'' +
                 ", lastName: " + lastName + '\'' +
                 ", age: " + age +
                 ", address: " + address + '\'';

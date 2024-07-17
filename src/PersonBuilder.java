@@ -1,13 +1,29 @@
 public class PersonBuilder {
-    private String fistName;
+    private String firstName;
     private String lastName;
     private int age;
     private String address;
 
     public PersonBuilder(){}
 
-    public PersonBuilder setFistName(String fistName) {
-        this.fistName = fistName;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public PersonBuilder setFirstName(String fistName) {
+        this.firstName = fistName;
         return this;
     }
 
@@ -26,6 +42,6 @@ public class PersonBuilder {
         return this;
     }
     public Person build(){
-        return new Person(fistName,lastName, age, address);
+        return new Person(this);
     }
 }
